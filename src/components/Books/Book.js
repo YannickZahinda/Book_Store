@@ -1,28 +1,30 @@
-import AddBookForm from "../AddBookForm/Addbook";
-
-const Book = () => {
-  return (
-    <>
+const Book = () => (
+  <>
+    <div>
       <div>
-        <div>
-          {" "}
-          <span className="title">Montagne </span> <br /> Barbara
-          <Buttons />
-        </div>
-        
+        {' '}
+        <span className="title">Montagne </span>
+        {' '}
+        <br />
+        {' '}
+        Barbara
+        <Buttons />
       </div>
-      <div><div className="statistics" />
-          100%
-        </div>
-      <CurrentChapter />
-    </>
-  );
-};
+
+    </div>
+    <div>
+      <div className="statistics" />
+      100%
+    </div>
+    <CurrentChapter />
+  </>
+);
 
 const Buttons = () => (
   <ul className="buttons">
     <li>
-      <button type="button">Comments</button>{" "}
+      <button type="button">Comments</button>
+      {' '}
     </li>
     <li>
       <button type="button">Comments</button>

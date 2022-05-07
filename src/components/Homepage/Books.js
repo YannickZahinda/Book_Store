@@ -6,11 +6,11 @@ import AddBookForm from '../AddBookForm/Addbook';
 const Books = () => (
   <div className="container">
     <ul>
-    <li className='book'><Book/></li>
-    <li className='book'><Book/></li>
-    <li className='book'><Book/></li>
+      <li className="book"><Book /></li>
+      <li className="book"><Book /></li>
+      <li className="book"><Book /></li>
     </ul>
-    <AddBookForm/>
+    <AddBookForm />
   </div>
 );
 

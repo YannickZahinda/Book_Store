@@ -6,7 +6,7 @@ const AddBookForm = () => (
     <select>
       <option>CATEGORIES</option>
     </select>
-    <button type="button" className="add-book-btn">ADD BOOK</button>
+    <button type="button" className="add-book-btn">ADD BOOK </button>
   </form>
 );
 

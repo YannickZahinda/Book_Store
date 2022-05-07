@@ -2,18 +2,18 @@ const Books = () => {
   const Book = [
     {
       id: 1,
-      title: "Marianna",
-      author: "Entre etre ou ne pas etre, je suis",
+      title: 'Marianna',
+      author: 'Entre etre ou ne pas etre, je suis',
     },
     {
       id: 2,
-      title: "Moi, Tituba, Sorciere",
-      author: "Christianna Forbes",
+      title: 'Moi, Tituba, Sorciere',
+      author: 'Christianna Forbes',
     },
     {
       id: 3,
-      title: "Reveilles-moi",
-      author: "Rayley Giynes",
+      title: 'Reveilles-moi',
+      author: 'Rayley Giynes',
     },
   ];
   return (
@@ -21,12 +21,19 @@ const Books = () => {
       {Book.map((book) => (
         <li key={book.id} className="book">
           <div>
-            {" "}
-            <span className="title">{book.title} </span> <br /> {book.author}
+            {' '}
+            <span className="title">
+              {book.title}
+              {' '}
+            </span>
+            {' '}
+            <br />
+            {' '}
+            {book.author}
             <Buttons />
           </div>
           <div>
-            <div className="statistics"></div>
+            <div className="statistics" />
             {/* <span className="percentage">100%</span> */}
             100%
           </div>
@@ -40,13 +47,14 @@ const Books = () => {
 const Buttons = () => (
   <ul className="buttons">
     <li>
-      <button>Comments</button>{" "}
+      <button type="button">Comments</button>
+      {' '}
     </li>
     <li>
-      <button>Comments</button>
+      <button type="button">Comments</button>
     </li>
     <li>
-      <button>Edit</button>
+      <button type="button">Edit</button>
     </li>
   </ul>
 );
@@ -55,7 +63,7 @@ const CurrentChapter = () => (
   <div className="current_chapter">
     <h3>CURRENT CHAPTER</h3>
     <p>Chapter 17</p>
-    <button className="update-btn">UPDATE PROGRESS</button>
+    <button type="button" className="update-btn">UPDATE PROGRESS</button>
   </div>
 );
 

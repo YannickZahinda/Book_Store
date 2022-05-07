@@ -14,7 +14,7 @@ const HomePage = () => (
         <li>CATEGORIES</li>
       </ul>
     </header>
-    <main className='books-wrapper'>
+    <main className="books-wrapper">
       <Books />
     </main>
     <AddBookForm />

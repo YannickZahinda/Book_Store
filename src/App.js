@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation/nav';
-import Categories from './components/Categories/Categories';
+import Categories from './components/Books/Categories/Categories';
 import Books from './components/Homepage/Books';
 
 function App() {

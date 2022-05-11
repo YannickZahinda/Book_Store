@@ -11,13 +11,13 @@ const BookReducer = (state = [], action) => {
     case REMOVE_BOOK:
       return {
         ...state,
-        books: state.filter((book) => book.title !== action.type),
+        books: state.filter(book => book.id !== action.type),
       };
     default: return state;
   }
 };
 
 export const addingBook = (book) => ({ type: ADD_BOOK, book });
-export const removingBook = (title) => ({ type: REMOVE_BOOK, title });
+export const removingBook = (id) => ({ type: REMOVE_BOOK, id });
 
 export default BookReducer;

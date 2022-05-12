@@ -1,19 +1,43 @@
-const ADD_BOOK = 'BookStore/Books/ADD_BOOK';
-const REMOVE_BOOK = 'BookStore/Books/REMOVE_BOOK';
+const ADD_BOOK = "BookStore/Books/ADD_BOOK";
+const REMOVE_BOOK = "BookStore/Books/REMOVE_BOOK";
 
-const BookReducer = (state = [], action) => {
+const myBooksArray = [
+  {
+    id: 1,  
+    title: "Montagne du tonerre",
+    author: "Barbara Carthland",
+  },
+  {
+    id: 2,  
+    title: "Seduction Mortelle",
+    author: "Boris Zirag",
+  },
+  {
+    id: 3,  
+    title: "Concerto du Souvenir",
+    author: "Harlequin",
+  },
+];
+
+const BookReducer = (state = myBooksArray, action) => {
   switch (action.type) {
     case ADD_BOOK:
+      //   return {
+      //     ...state,
+      //     books: [state.title, state.author, action.type],
+      //   };
+      let newState = [...state];
       return {
-        ...state,
-        books: [state.title, state.author, action.type],
+          newState,
+          books: [newState.filter(book => book), action.type]
       };
     case REMOVE_BOOK:
       return {
         ...state,
         books: state.filter((book) => book.id !== action.type),
       };
-    default: return state;
+    default:
+      return state;
   }
 };
 

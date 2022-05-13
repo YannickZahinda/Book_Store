@@ -1,19 +1,20 @@
 const ADD_BOOK = 'BookStore/Books/ADD_BOOK';
 const REMOVE_BOOK = 'BookStore/Books/REMOVE_BOOK';
 
-const BookReducer = (state = [], action) => {
+const myBooksArray = [];
+
+const BookReducer = (state = myBooksArray, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return {
+      return [
         ...state,
-        books: [state.title, state.author, action.type],
-      };
+        action.book,
+      ];
+
     case REMOVE_BOOK:
-      return {
-        ...state,
-        books: state.filter((book) => book.id !== action.type),
-      };
-    default: return state;
+      return state.filter((book) => book.id !== action.id);
+    default:
+      return state;
   }
 };
 

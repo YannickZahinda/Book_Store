@@ -1,39 +1,45 @@
-const Book = () => (
-  <>
-    <div>
+import { removingBook } from "../../redux/Books/Books";
+import { useDispatch } from "react-redux";
+const Book = (props) => {
+  return (
+    <>
       <div>
-        {' '}
-        <span className="title">Montagne </span>
-        {' '}
-        <br />
-        {' '}
-        Barbara
-        <Buttons />
+        <div>
+          {" "}
+          <span className="title">{props.myBook.title}</span> <br />{" "}
+          {props.myBook.author}
+        </div>
       </div>
+      <div>
+        <div className="statistics" />
+        100%
+      </div>
+      <CurrentChapter />
+      <Buttons data = {props.myBook} />
+    </>
+  );
+};
 
-    </div>
-    <div>
-      <div className="statistics" />
-      100%
-    </div>
-    <CurrentChapter />
-  </>
-);
-
-const Buttons = () => (
+const Buttons = (props) => {
+  const dispatch = useDispatch();
+  const handleRemove = (e) => {
+    e.preventDefault();
+    dispatch(removingBook(props.data.id));
+    
+  };
+  return(
   <ul className="buttons">
     <li>
-      <button type="button">Comments</button>
-      {' '}
+      <button type="button">Comments</button>{" "}
     </li>
     <li>
-      <button type="button">Comments</button>
+      <button type="button" onClick={handleRemove}>Delete</button>
     </li>
     <li>
       <button type="button">Edit</button>
     </li>
   </ul>
-);
+)};
 
 const CurrentChapter = () => (
   <div className="current_chapter">

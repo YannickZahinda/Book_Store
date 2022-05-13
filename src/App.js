@@ -5,7 +5,7 @@ import store from './redux/configureStore';
 import './App.css';
 
 import Navigation from './components/Navigation/nav';
-import Categories from './components/Books/Categories/Categories';
+import Categories from './components/Categories/Categories';
 import Books from './components/Homepage/Books';
 
 function App() {

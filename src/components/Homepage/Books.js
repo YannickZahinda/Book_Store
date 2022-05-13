@@ -6,7 +6,6 @@ import AddBookForm from '../AddBookForm/Addbook';
 
 const Books = () => {
   const bookList = useSelector((state) => state.BookReducer);
-  console.log('book added succefully', bookList);
   return (
     <div className="container">
       <ul>

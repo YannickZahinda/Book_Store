@@ -7,7 +7,6 @@ const Categories = () => {
   const handleStatus = (e) => {
     e.preventDefault();
     dispatch(checkAction());
-    console.log('clicked');
   };
   const statusCheck = useSelector((state) => state.CategoriesReducer);
   return (

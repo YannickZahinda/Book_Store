@@ -6,7 +6,7 @@ const CategoriesReducer = (state = [], action) => {
     case CHECK_STATUS:
       return [
         ...state,
-        'UNDER CONSTRUCTION' ];
+        'UNDER CONSTRUCTION'];
     default:
       return state;
   }

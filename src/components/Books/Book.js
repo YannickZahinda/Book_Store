@@ -1,45 +1,60 @@
-import { removingBook } from "../../redux/Books/Books";
-import { useDispatch } from "react-redux";
-const Book = (props) => {
-  return (
-    <>
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { removingBook } from '../../redux/Books/Books';
+
+const Book = ({ title, author, id }) => (
+  <>
+    <div>
       <div>
-        <div>
-          {" "}
-          <span className="title">{props.myBook.title}</span> <br />{" "}
-          {props.myBook.author}
-        </div>
+        {' '}
+        <span className="title">{title}</span>
+        {' '}
+        <br />
+        {' '}
+        {/* {props.myBook.author} */}
+        {author}
       </div>
-      <div>
-        <div className="statistics" />
-        100%
-      </div>
-      <CurrentChapter />
-      <Buttons data = {props.myBook} />
-    </>
-  );
+    </div>
+    <div>
+      <div className="statistics" />
+      100%
+    </div>
+    <CurrentChapter />
+    <Buttons id={id} />
+  </>
+);
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-const Buttons = (props) => {
+const Buttons = ({ id }) => {
   const dispatch = useDispatch();
   const handleRemove = (e) => {
     e.preventDefault();
-    dispatch(removingBook(props.data.id));
-    
+    dispatch(removingBook(id));
   };
-  return(
-  <ul className="buttons">
-    <li>
-      <button type="button">Comments</button>{" "}
-    </li>
-    <li>
-      <button type="button" onClick={handleRemove}>Delete</button>
-    </li>
-    <li>
-      <button type="button">Edit</button>
-    </li>
-  </ul>
-)};
+  return (
+    <ul className="buttons">
+      <li>
+        <button type="button">Comments</button>
+        {' '}
+      </li>
+      <li>
+        <button type="button" onClick={handleRemove}>Delete</button>
+      </li>
+      <li>
+        <button type="button">Edit</button>
+      </li>
+    </ul>
+  );
+};
+
+Buttons.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 const CurrentChapter = () => (
   <div className="current_chapter">

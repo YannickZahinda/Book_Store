@@ -1,15 +1,15 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { checkAction } from "../../redux/Categories/Categories";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkAction } from '../../redux/Categories/Categories';
 
 const Categories = () => {
   const dispatch = useDispatch();
   const handleStatus = (e) => {
     e.preventDefault();
     dispatch(checkAction());
-    console.log("clicked");
+    console.log('clicked');
   };
-  const statusCheck = useSelector( state => state.CategoriesReducer)
+  const statusCheck = useSelector((state) => state.CategoriesReducer);
   return (
     <div>
       <h1>check status</h1>

@@ -1,11 +1,12 @@
-import React from "react";
-import { Provider } from "react-redux";
-import store from './redux/configureStore'
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation/nav";
-import Categories from "./components/Categories/Categories";
-import Books from "./components/Homepage/Books";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import store from './redux/configureStore';
+import './App.css';
+
+import Navigation from './components/Navigation/nav';
+import Categories from './components/Categories/Categories';
+import Books from './components/Homepage/Books';
 
 function App() {
   return (

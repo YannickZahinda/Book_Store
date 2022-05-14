@@ -1,31 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import store from './redux/configureStore';
-import './App.css';
-
-import Navigation from './components/Navigation/nav';
+import Nav from './components/header/Nav';
+import Books from './components/books/Books';
 import Categories from './components/Categories/Categories';
-import Books from './components/Homepage/Books';
+import Store from './redux/configureStore';
 
-function App() {
-  return (
-    <div className="container">
-      <Provider store={store}>
-        <BrowserRouter>
-          <header>
-            <Navigation />
-          </header>
-          <main>
-            <Routes>
-              <Route path="/" element={<Books />} />
-              <Route path="/Categories" element={<Categories />} />
-            </Routes>
-          </main>
-        </BrowserRouter>
-      </Provider>
-    </div>
-  );
-}
+const App = () => (
+  <Provider store={Store}>
+    <Router>
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+      </main>
+    </Router>
+  </Provider>
+);
 
 export default App;

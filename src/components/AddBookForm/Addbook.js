@@ -1,33 +1,41 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addingBook } from '../../redux/Books/Books';
+import { addBookApi } from '../../redux/book/books';
+import './addBook.css';
 
-const AddBookForm = () => {
+const AddBook = () => {
   const dispatch = useDispatch();
+
   const handleBookAdded = (e) => {
     e.preventDefault();
     const [title, author] = e.target.elements;
-    const bookObject = {
-      id: v4(),
-      title: title.value,
-      author: author.value,
-    };
-
-    dispatch(addingBook(bookObject));
-    title.value = '';
-    author.value = '';
+    if (title.value.trim() && author.value.trim()) {
+      const bookObj = {
+        item_id: v4(),
+        title: title.value.trim(),
+        author: author.value.trim(),
+        category: 'default',
+      };
+      dispatch(addBookApi(bookObj));
+      title.value = '';
+      author.value = '';
+      title.focus();
+    }
   };
+
   return (
-    <form onSubmit={handleBookAdded} id="my-form">
-      <h1>Add Book</h1>
-      <input id="author" type="text" placeholder="Author" />
-      <input id="title" type="text" placeholder="Title" />
-      <select>
-        <option>CATEGORIES</option>
-      </select>
-      <button type="submit" className="add-book-btn">ADD BOOK </button>
-    </form>
+    <div className="add-book flex flex--column">
+      <h2>ADD NEW BOOK</h2>
+      <form onSubmit={handleBookAdded} action="/" className="add-book-form flex">
+        <input id="title" name="title" type="text" className="input input--text" placeholder="Book title" required />
+        <input type="text" id="author" name="author" className="input input--text" placeholder="author" required />
+        <button type="submit" className="btn btn--primary">
+          ADD BOOK
+        </button>
+      </form>
+    </div>
   );
 };
 
-export default AddBookForm;
+export default AddBook;

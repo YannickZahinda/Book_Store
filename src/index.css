@@ -1,27 +1,201 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --clr-white: #fff;
+  --clr-cool-blue: #4386bf;
+  --clr-pinkish-gray: #c4c4c4;
+  --clr-black: #121212;
+  --clr-azure: #0290ff;
+  --clr-grey-border: #e8e8e8;
+  --clr-body: #fafafa;
+  --clr-warm-grey: #888;
+
+  /* font families */
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-roboto-sl: 'Roboto Slab', serif;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default link style */
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-montserrat);
+  color: var(--clr-black);
+  scroll-behavior: smooth;
+  background: var(--clr-body);
+  padding-bottom: 8rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+/* Remove default button styles */
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='search'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+main {
+  padding: 2.313rem 6.25rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.btn--primary {
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: var(--clr-azure);
+  font-family: var(--ff-roboto-sl);
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.btn--icon {
+  display: block;
+  width: 29px;
+  padding: 0;
+  margin: 0;
+}
+
+.btn--text {
+  display: block;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }

@@ -22,7 +22,9 @@
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "src/components/books/Books.js",
+      "src/components/book/Book.js"
     ]
   }
   

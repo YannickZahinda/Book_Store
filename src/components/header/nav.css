@@ -1,0 +1,47 @@
+/* stylesheet */
+.header {
+  padding: 1.813rem 6.25rem;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--clr-white);
+
+  --gap: 2.938rem;
+}
+
+nav {
+  justify-content: space-between !important;
+  flex: 1 0 0;
+}
+
+.header-title {
+  font-size: 1rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--clr-azure);
+}
+
+li {
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--clr-black);
+}
+
+.user {
+  padding: 1rem;
+  border: solid 1px var(--clr-grey-border);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.ri-user-3-fill {
+  color: var(--clr-azure);
+}

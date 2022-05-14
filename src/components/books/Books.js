@@ -16,7 +16,9 @@ const Books = () => {
   return (
     <section className="books flex flex--column">
       <div className="books-list flex flex--column">
-        {books.length ? books.map((book) => <Book key={book.item_id} book={book} /> ) : <p>No Books available!</p>}
+        {books.length
+          ? books.map((book) => <Book key={book.item_id} book={book} />)
+          : <p>No Books available!</p>}
       </div>
       <span className="section-sperator" />
       <AddBook />

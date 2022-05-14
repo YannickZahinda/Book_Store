@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { caretgoriesStatusAction } from '../../redux/Categories/Categories';
-// import './categories.css';
 
 const Categories = () => {
   const categories = useSelector((state) => state.categories);

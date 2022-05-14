@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBookApiAction } from '../../redux/book/books';
 import './books.css';
 import Book from '../book/Book';
+/* eslint-disable import/prefer-default-export */
 import AddBook from '../addBookForm/Addbook';
 
 const Books = () => {

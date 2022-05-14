@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { v4 } from 'uuid';
-import { addingBook } from '../../redux/Books/Books';
+import { useDispatch } from "react-redux";
+import { v4 } from "uuid";
+import { addBookToApi } from "../../redux/Books/Books";
 
 const AddBookForm = () => {
   const dispatch = useDispatch();
@@ -8,24 +8,27 @@ const AddBookForm = () => {
     e.preventDefault();
     const [title, author] = e.target.elements;
     const bookObject = {
-      id: v4(),
-      title: title.value,
-      author: author.value,
+      item_id: v4(),
+      title: title.value.trim(),
+      author: author.value.trim(),
+      category: 'fiction'
     };
-
-    dispatch(addingBook(bookObject));
-    title.value = '';
-    author.value = '';
+    dispatch(addBookToApi(bookObject));
+      title.value = "";
+      author.value = "";
+      title.focus();
   };
   return (
     <form onSubmit={handleBookAdded} id="my-form">
       <h1>Add Book</h1>
-      <input id="author" type="text" placeholder="Author" />
-      <input id="title" type="text" placeholder="Title" />
+      <input id="author" name="author" type="text" placeholder="Author" required />
+      <input id="title" name="title" type="text" placeholder="Title" required />
       <select>
         <option>CATEGORIES</option>
       </select>
-      <button type="submit" className="add-book-btn">ADD BOOK </button>
+      <button type="submit" className="add-book-btn">
+        ADD BOOK{" "}
+      </button>
     </form>
   );
 };

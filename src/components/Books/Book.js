@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removingBook } from '../../redux/Books/Books';
+import { removeFromApi } from '../../redux/Books/Books';
 
-const Book = ({ title, author, id }) => (
+const Book = ({ title, author, item_id }) => (
   <>
     <div>
       <div>
@@ -20,21 +20,21 @@ const Book = ({ title, author, id }) => (
       100%
     </div>
     <CurrentChapter />
-    <Buttons id={id} />
+    <Buttons id={item_id} />
   </>
 );
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  item_id: PropTypes.number.isRequired,
 };
 
-const Buttons = ({ id }) => {
+const Buttons = ({id}) => {
   const dispatch = useDispatch();
   const handleRemove = (e) => {
     e.preventDefault();
-    dispatch(removingBook(id));
+    dispatch(removeFromApi(id));
   };
   return (
     <ul className="buttons">

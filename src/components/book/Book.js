@@ -1,7 +1,6 @@
 import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useDispatch } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import { removeBookApi } from '../../redux/book/books';
 import './book.css';
 
@@ -70,11 +69,11 @@ const Book = ({ book }) => {
   );
 };
 
-Book.propTypes = {
-  book: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  item_id: PropTypes.number.isRequired,
-};
+// Book.propTypes = {
+//   book: PropTypes.string.isRequired,
+//   category: PropTypes.string.isRequired,
+//   title: PropTypes.string.isRequired,
+//   item_id: PropTypes.number.isRequired,
+// };
 
 export default Book;

@@ -23,7 +23,8 @@
     "ignorePatterns": [
       "dist/",
       "build/",
-      "src/components/books/Books.js"
+      "src/components/books/Books.js",
+      "src/components/book/Book.js"
     ]
   }
   

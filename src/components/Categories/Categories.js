@@ -1,23 +1,25 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { checkAction } from '../../redux/Categories/Categories';
+import { useSelector, useDispatch } from 'react-redux';
+import { caretgoriesStatusAction } from '../../redux/Categories/Categories';
+// import './categories.css';
 
 const Categories = () => {
+  const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();
-  const handleStatus = (e) => {
-    e.preventDefault();
-    dispatch(checkAction());
+
+  const checkCategoriesStatus = () => {
+    dispatch(caretgoriesStatusAction());
   };
-  const statusCheck = useSelector((state) => state.CategoriesReducer);
   return (
-    <div>
-      <h1>check status</h1>
-      <p>
-        <button className="add-book-btn" type="button" onClick={handleStatus}>
-          Check status
-        </button>
-      </p>
-      <div>{statusCheck}</div>
+    <div className="flex">
+      <button
+        onClick={checkCategoriesStatus}
+        type="button"
+        className="btn btn--primary"
+      >
+        Check status
+      </button>
+      <p>{categories}</p>
     </div>
   );
 };

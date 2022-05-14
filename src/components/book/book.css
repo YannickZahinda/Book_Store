@@ -1,0 +1,127 @@
+.book {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-white);
+    padding: 2rem 9.188rem 1.625rem 1.688rem;
+    border-radius: 4px;
+    border: solid 1px var(--clr-grey-border);
+  }
+  
+  .book-details {
+    justify-content: center;
+    align-items: flex-start;
+  
+    --gap: 0.8rem;
+  }
+  
+  .text-category {
+    opacity: 0.5;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--clr-black);
+  }
+  
+  .text-title {
+    font-family: var(--ff-roboto-sl);
+    font-size: 1.375rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: var(--clr-black);
+  }
+  
+  .text-secondary {
+    font-family: var(--ff-roboto-sl);
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--clr-cool-blue);
+  }
+  
+  .l-r-border {
+    border-inline: solid 1px var(--clr-grey-border);
+    padding-inline: 0.938rem;
+  }
+  
+  .book-status {
+    justify-content: center;
+    align-items: center;
+  
+    --gap: 1.375rem;
+  }
+  
+  .percent {
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--clr-black);
+  }
+  
+  .complete-status {
+    --gap: 0;
+  }
+  
+  .text-gray {
+    opacity: 0.5;
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--clr-black);
+  }
+  
+  .book-chapter {
+    justify-content: center;
+    align-items: flex-start;
+  
+    --gap: 1.438rem;
+  }
+  
+  .chapter-title {
+    justify-content: center;
+    align-items: flex-start;
+  
+    --gap: 0.438rem;
+  }
+  
+  .text-chapter {
+    opacity: 0.5;
+    font-family: var(--ff-roboto-sl);
+    font-size: 0.813rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--clr-black);
+  }
+  
+  .text-chapter-title {
+    font-family: var(--ff-roboto-sl);
+    font-size: 1rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: var(--clr-black);
+  }
+  
+  .book-chapter button {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+  }
